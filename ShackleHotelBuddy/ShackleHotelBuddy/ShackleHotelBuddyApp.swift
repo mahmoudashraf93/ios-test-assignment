@@ -11,7 +11,9 @@ import SwiftUI
 struct ShackleHotelBuddyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                HotelSearchView()
+            }
         }
     }
 }
