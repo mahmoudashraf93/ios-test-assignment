@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct HotelListView: View {
+    @Environment(\.dismiss) private var dismiss
+
     @StateObject var viewModel: HotelListViewModel = HotelListViewModel()
-    @State var isShowingFilter: Bool = false
-    @Binding var isShowing: Bool
     var body: some View {
         VStack {
             header
@@ -18,24 +18,29 @@ struct HotelListView: View {
                 Spacer()
                 ProgressView()
                     .task {
-//                        await viewModel.fetchHotels()
+                        //                        await viewModel.fetchHotels()
                     }
-                Spacer()
             } else {
-                List(viewModel.hotels) { hotel in
-                    HotelRow(viewModel: .init(property: hotel))
-                        .listRowSeparator(.hidden)
+                ScrollView {
+                    LazyVStack {
+                        ForEach(viewModel.hotels.indices, id: \.self) { index in
+                            NavigationLink(destination: HotelDetailsView(viewModel: .init(property: viewModel.hotels[index])).navigationBarHidden(true)) {
+                                HotelRow(viewModel: .init(property: viewModel.hotels[index]))
+                                    .padding(.horizontal, 16)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
                 }
-                .listStyle(.plain)
-
             }
+            Spacer()
         }
     }
 
     var header: some View {
         HStack {
             Button {
-                isShowing = false
+                dismiss()
             } label: {
                 Image("icons/close")
             }
@@ -52,8 +57,7 @@ struct HotelListView: View {
             Text("Search results")
 
             Spacer()
-            NavigationLink(destination: FilterView(isShowing: $isShowingFilter).navigationBarHidden(true),
-                           isActive: $isShowingFilter) {
+            NavigationLink(destination: FilterView().navigationBarHidden(true)) {
                 Image("icons/discover_tune")
                     .foregroundColor(.black)
                     .padding(6)

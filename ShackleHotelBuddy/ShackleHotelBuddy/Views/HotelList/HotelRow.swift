@@ -29,19 +29,18 @@ struct HotelRow: View {
     let viewModel: HotelRowViewModel
 
     var body: some View {
-        VStack{
+        VStack {
             AsyncImage(url: viewModel.imageURL) { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
                     .frame(height: 200)
-                    .cornerRadius(8)
-
+                    .aspectRatio(contentMode: .fill)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                
             } placeholder: {
                 ProgressView()
             }
-
-
+            
             VStack(alignment: .leading){
                 HStack {
                     Text(viewModel.name)
