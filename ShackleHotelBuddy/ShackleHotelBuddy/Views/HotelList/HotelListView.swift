@@ -11,6 +11,7 @@ struct HotelListView: View {
     @Environment(\.dismiss) private var dismiss
 
     @StateObject var viewModel: HotelListViewModel = HotelListViewModel()
+    
     var body: some View {
         VStack {
             header
@@ -34,6 +35,9 @@ struct HotelListView: View {
                 }
             }
             Spacer()
+        }.onChange(of: viewModel.filter) { newValue in
+            viewModel.hotels.removeAll()
+            //                        await viewModel.fetchHotels()
         }
     }
 
@@ -57,7 +61,7 @@ struct HotelListView: View {
             Text("Search results")
 
             Spacer()
-            NavigationLink(destination: FilterView().navigationBarHidden(true)) {
+            NavigationLink(destination: FilterView(appliedFilter: $viewModel.filter).navigationBarHidden(true)) {
                 Image("icons/discover_tune")
                     .foregroundColor(.black)
                     .padding(6)

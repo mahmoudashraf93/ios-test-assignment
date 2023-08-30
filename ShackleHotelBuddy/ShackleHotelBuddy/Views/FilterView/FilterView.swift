@@ -7,12 +7,29 @@
 
 import SwiftUI
 
+class Filter: ObservableObject, Equatable {
+    let priceRange: ClosedRange<Int>?
+    let rating: Int?
+
+
+    init(priceRange: ClosedRange<Int>?, rating: Int?) {
+        self.priceRange = priceRange
+        self.rating = rating
+    }
+
+    static func == (lhs: Filter, rhs: Filter) -> Bool {
+        lhs.priceRange == rhs.priceRange && lhs.rating == rhs.rating
+    }
+}
+
 struct FilterView: View {
     @State var sliderPosition: ClosedRange<Float> = 0...300
     @State var rate: Int = 4
 
     @State var min: Int = 0
     @State var max: Int = 300
+
+    @Binding var appliedFilter: Filter
 
     @Environment(\.dismiss) private var dismiss
 
@@ -22,6 +39,7 @@ struct FilterView: View {
             priceRangeView
             ratingView
             Spacer()
+            footer
         }
     }
 
@@ -47,6 +65,39 @@ struct FilterView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal)
+    }
+
+    var footer: some View {
+        VStack(spacing: 16) {
+            Divider()
+
+            HStack {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("Cancel")
+                        .foregroundColor(.black)
+                }
+
+                Spacer()
+
+                Button {
+                    appliedFilter = .init(priceRange: min...max,
+                                          rating: rate)
+                    dismiss()
+                } label: {
+                    Text("Apply filters")
+                        .foregroundColor(.white)
+                        .padding(.vertical, 16)
+                        .padding(.horizontal, 26)
+                        .background(Color(red: 44/255,
+                                          green: 171/255,
+                                          blue: 177/255))
+                        .cornerRadius(12)
+                }
+            }
+            .padding(.horizontal)
+        }
     }
 
     var ratingView: some View {
