@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HotelRowViewModel {
     let name: String
-    let rating: Double
+    let rating: Double?
     let city: String
     let price: String
     let priceText: String
@@ -18,7 +18,7 @@ struct HotelRowViewModel {
     init (property: Property) {
         self.name = property.name ?? ""
         self.imageURL = URL(string: property.propertyImage?.image.url ?? "")
-        self.rating = property.reviews?.score ?? 0.0
+        self.rating = property.reviews?.score
         self.price = property.price?.lead.formatted ?? ""
         self.priceText = property.price?.priceMessages.first?.value ?? ""
         self.city = property.neighborhood?.name ?? ""
@@ -46,9 +46,11 @@ struct HotelRow: View {
                     Text(viewModel.name)
                         .fontWeight(.bold)
                     Spacer()
-                    HStack {
-                        Image("icons/grade")
-                        Text(viewModel.rating.formatted())
+                    if let rating = viewModel.rating {
+                        HStack {
+                            Image("icons/grade")
+                            Text(rating.formatted())
+                        }
                     }
                 }
                 Text(viewModel.city)

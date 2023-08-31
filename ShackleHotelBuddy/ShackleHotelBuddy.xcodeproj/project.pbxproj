@@ -23,12 +23,18 @@
 		18877B5B2A9A294800BAD5FC /* ListBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18877B5A2A9A294800BAD5FC /* ListBody.swift */; };
 		18877B5D2A9A418100BAD5FC /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18877B5C2A9A418100BAD5FC /* NetworkClientTests.swift */; };
 		18877B612A9A428600BAD5FC /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18877B602A9A428600BAD5FC /* URLSessionMock.swift */; };
+		18A721252A9FBA6B0068C6FD /* MockPropertiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A721242A9FBA6B0068C6FD /* MockPropertiesService.swift */; };
+		18A721272A9FBC690068C6FD /* Property.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A721262A9FBC690068C6FD /* Property.json */; };
 		18C8ED712A9A498A004CEE2A /* Response_Valid.json in Resources */ = {isa = PBXBuildFile; fileRef = 18C8ED702A9A498A004CEE2A /* Response_Valid.json */; };
 		18C8ED732A9A4F3B004CEE2A /* HotelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8ED722A9A4F3B004CEE2A /* HotelRow.swift */; };
 		18C8ED752A9E331B004CEE2A /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8ED742A9E331B004CEE2A /* FilterView.swift */; };
 		18C8ED792A9E344B004CEE2A /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8ED782A9E344B004CEE2A /* RatingView.swift */; };
 		18C8ED7B2A9E3486004CEE2A /* RangedSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8ED7A2A9E3486004CEE2A /* RangedSliderView.swift */; };
 		18E23CA12A9F777400A8B0E0 /* HotelDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23CA02A9F777400A8B0E0 /* HotelDetailsView.swift */; };
+		18E23CA62A9F9E9200A8B0E0 /* DateSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23CA52A9F9E9200A8B0E0 /* DateSelectionView.swift */; };
+		18E23CA82A9F9EAD00A8B0E0 /* DateSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23CA72A9F9EAD00A8B0E0 /* DateSelectionViewModel.swift */; };
+		18E23CAA2A9FA2F600A8B0E0 /* NumberSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23CA92A9FA2F600A8B0E0 /* NumberSelectionView.swift */; };
+		18E23CAC2A9FA33E00A8B0E0 /* NumberSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E23CAB2A9FA33E00A8B0E0 /* NumberSelectionViewModel.swift */; };
 		F9BF20DB2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BF20DA2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift */; };
 		F9BF20DF2A6A8970006C0C49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9BF20DE2A6A8970006C0C49 /* Assets.xcassets */; };
 		F9BF20EC2A6A8971006C0C49 /* ShackleHotelBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BF20EB2A6A8971006C0C49 /* ShackleHotelBuddyTests.swift */; };
@@ -70,12 +76,18 @@
 		18877B5A2A9A294800BAD5FC /* ListBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBody.swift; sourceTree = "<group>"; };
 		18877B5C2A9A418100BAD5FC /* NetworkClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientTests.swift; sourceTree = "<group>"; };
 		18877B602A9A428600BAD5FC /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		18A721242A9FBA6B0068C6FD /* MockPropertiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPropertiesService.swift; sourceTree = "<group>"; };
+		18A721262A9FBC690068C6FD /* Property.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Property.json; sourceTree = "<group>"; };
 		18C8ED702A9A498A004CEE2A /* Response_Valid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Response_Valid.json; sourceTree = "<group>"; };
 		18C8ED722A9A4F3B004CEE2A /* HotelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRow.swift; sourceTree = "<group>"; };
 		18C8ED742A9E331B004CEE2A /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		18C8ED782A9E344B004CEE2A /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		18C8ED7A2A9E3486004CEE2A /* RangedSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangedSliderView.swift; sourceTree = "<group>"; };
 		18E23CA02A9F777400A8B0E0 /* HotelDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailsView.swift; sourceTree = "<group>"; };
+		18E23CA52A9F9E9200A8B0E0 /* DateSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionView.swift; sourceTree = "<group>"; };
+		18E23CA72A9F9EAD00A8B0E0 /* DateSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectionViewModel.swift; sourceTree = "<group>"; };
+		18E23CA92A9FA2F600A8B0E0 /* NumberSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectionView.swift; sourceTree = "<group>"; };
+		18E23CAB2A9FA33E00A8B0E0 /* NumberSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSelectionViewModel.swift; sourceTree = "<group>"; };
 		F9BF20D72A6A896E006C0C49 /* ShackleHotelBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShackleHotelBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9BF20DA2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShackleHotelBuddyApp.swift; sourceTree = "<group>"; };
 		F9BF20DE2A6A8970006C0C49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -202,6 +214,8 @@
 			children = (
 				18877B542A99FA3100BAD5FC /* HotelSearchView.swift */,
 				18877B562A99FB2800BAD5FC /* HotelSearchViewModel.swift */,
+				18E23CAE2A9FA35300A8B0E0 /* DateSelection */,
+				18E23CAD2A9FA34A00A8B0E0 /* NumberSelection */,
 			);
 			path = HotelSearch;
 			sourceTree = "<group>";
@@ -212,6 +226,24 @@
 				18E23CA02A9F777400A8B0E0 /* HotelDetailsView.swift */,
 			);
 			path = HotelDetails;
+			sourceTree = "<group>";
+		};
+		18E23CAD2A9FA34A00A8B0E0 /* NumberSelection */ = {
+			isa = PBXGroup;
+			children = (
+				18E23CA92A9FA2F600A8B0E0 /* NumberSelectionView.swift */,
+				18E23CAB2A9FA33E00A8B0E0 /* NumberSelectionViewModel.swift */,
+			);
+			path = NumberSelection;
+			sourceTree = "<group>";
+		};
+		18E23CAE2A9FA35300A8B0E0 /* DateSelection */ = {
+			isa = PBXGroup;
+			children = (
+				18E23CA52A9F9E9200A8B0E0 /* DateSelectionView.swift */,
+				18E23CA72A9F9EAD00A8B0E0 /* DateSelectionViewModel.swift */,
+			);
+			path = DateSelection;
 			sourceTree = "<group>";
 		};
 		F9BF20CE2A6A896E006C0C49 = {
@@ -245,6 +277,8 @@
 				F9BF20DE2A6A8970006C0C49 /* Assets.xcassets */,
 				18877B532A99FA0D00BAD5FC /* Views */,
 				18877B582A9A149A00BAD5FC /* UIApplication+SafeArea.swift */,
+				18A721242A9FBA6B0068C6FD /* MockPropertiesService.swift */,
+				18A721262A9FBC690068C6FD /* Property.json */,
 			);
 			path = ShackleHotelBuddy;
 			sourceTree = "<group>";
@@ -371,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A721272A9FBC690068C6FD /* Property.json in Resources */,
 				F9BF20DF2A6A8970006C0C49 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,18 +436,23 @@
 				18877B402A99E73600BAD5FC /* Endpoint.swift in Sources */,
 				18C8ED7B2A9E3486004CEE2A /* RangedSliderView.swift in Sources */,
 				18877B3E2A99E73600BAD5FC /* URLSessionProtocol.swift in Sources */,
+				18E23CAC2A9FA33E00A8B0E0 /* NumberSelectionViewModel.swift in Sources */,
+				18E23CAA2A9FA2F600A8B0E0 /* NumberSelectionView.swift in Sources */,
 				18C8ED792A9E344B004CEE2A /* RatingView.swift in Sources */,
 				18877B5B2A9A294800BAD5FC /* ListBody.swift in Sources */,
 				18877B512A99F88C00BAD5FC /* HotelListViewModel.swift in Sources */,
 				18877B452A99E83A00BAD5FC /* PropertiesService.swift in Sources */,
 				18877B592A9A149A00BAD5FC /* UIApplication+SafeArea.swift in Sources */,
 				18877B3F2A99E73600BAD5FC /* NetworkError.swift in Sources */,
+				18E23CA62A9F9E9200A8B0E0 /* DateSelectionView.swift in Sources */,
 				18877B4F2A99F76000BAD5FC /* HotelListView.swift in Sources */,
 				18877B472A99E8FA00BAD5FC /* PropertiesEndpoint.swift in Sources */,
+				18E23CA82A9F9EAD00A8B0E0 /* DateSelectionViewModel.swift in Sources */,
 				18C8ED752A9E331B004CEE2A /* FilterView.swift in Sources */,
 				18877B3D2A99E73600BAD5FC /* NetworkClient.swift in Sources */,
 				F9BF20DB2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift in Sources */,
 				18877B552A99FA3100BAD5FC /* HotelSearchView.swift in Sources */,
+				18A721252A9FBA6B0068C6FD /* MockPropertiesService.swift in Sources */,
 				18C8ED732A9A4F3B004CEE2A /* HotelRow.swift in Sources */,
 				18877B4D2A99F22600BAD5FC /* Constants.swift in Sources */,
 				18E23CA12A9F777400A8B0E0 /* HotelDetailsView.swift in Sources */,

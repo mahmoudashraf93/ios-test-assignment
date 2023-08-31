@@ -9,8 +9,7 @@ import SwiftUI
 
 struct HotelListView: View {
     @Environment(\.dismiss) private var dismiss
-
-    @StateObject var viewModel: HotelListViewModel = HotelListViewModel()
+    @StateObject var viewModel: HotelListViewModel
     
     var body: some View {
         VStack {
@@ -19,13 +18,14 @@ struct HotelListView: View {
                 Spacer()
                 ProgressView()
                     .task {
-                        //                        await viewModel.fetchHotels()
+                        await viewModel.fetchHotels()
                     }
             } else {
                 ScrollView {
                     LazyVStack {
                         ForEach(viewModel.hotels.indices, id: \.self) { index in
-                            NavigationLink(destination: HotelDetailsView(viewModel: .init(property: viewModel.hotels[index])).navigationBarHidden(true)) {
+                            NavigationLink(destination: HotelDetailsView(viewModel: HotelDetailsViewModel(propertyID: "")
+).navigationBarHidden(true)) {
                                 HotelRow(viewModel: .init(property: viewModel.hotels[index]))
                                     .padding(.horizontal, 16)
                             }
@@ -36,8 +36,9 @@ struct HotelListView: View {
             }
             Spacer()
         }.onChange(of: viewModel.filter) { newValue in
-            viewModel.hotels.removeAll()
-            //                        await viewModel.fetchHotels()
+            Task(priority: .background) {
+                await viewModel.fetchHotels()
+            }
         }
     }
 

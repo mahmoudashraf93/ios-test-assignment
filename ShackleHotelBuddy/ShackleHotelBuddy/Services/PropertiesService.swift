@@ -9,7 +9,8 @@ import Foundation
 import Combine
 
 protocol PropertiesServiceProtocol {
-    func fetchProperties() async throws -> PropertiesResponse
+    func fetchProperties(with parameters: ListParameters) async throws -> PropertiesResponse
+    func propertyDetail(for propertyID: String) async throws -> Property
 }
 
 class PropertiesService: PropertiesServiceProtocol {
@@ -19,8 +20,13 @@ class PropertiesService: PropertiesServiceProtocol {
         self.networkClient = networkRequest
     }
 
-    func fetchProperties() async throws -> PropertiesResponse {
-        let endpoint = PropertiesEndpoint.list
+    func fetchProperties(with parameters: ListParameters) async throws -> PropertiesResponse {
+        let endpoint = PropertiesEndpoint.list(params: parameters)
+        return try await networkClient.sendRequest(endpoint)
+    }
+
+    func propertyDetail(for propertyID: String) async throws -> Property {
+        let endpoint = PropertiesEndpoint.details(propertyID: propertyID)
         return try await networkClient.sendRequest(endpoint)
     }
 }

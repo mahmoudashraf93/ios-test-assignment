@@ -8,67 +8,100 @@
 import SwiftUI
 
 struct HotelSearchView: View {
-    @State private var checkInDate = Date()
-    @State private var checkOutDate = Date()
-    @State private var numberOfAdults = 1
-    @State private var numberOfChildren = 0
-
     @StateObject var viewModel = HotelSearchViewModel()
-
-    @State private var isShowingDetail = false
+    @State private var isValid = false
 
     var body: some View {
         NavigationView {
-            ZStack(alignment: .top) {
-                Image("images/background")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+                ZStack(alignment: .top) {
+                    Image("images/background")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                    ScrollView {
+                    VStack(spacing: 32) {
+                        VStack(spacing: 48){
+                            HStack {
+                                Image("images/logo")
+                                    .frame(height: 32)
+                                Spacer()
+                                Image("icons/person")
+                                    .background(.gray)
+                                    .frame(width: 32, height: 32)
+                                    .cornerRadius(10)
+                            }
 
-                VStack(spacing: 32) {
-                    VStack(spacing: 48){
-                        HStack {
-                            Image("images/logo")
-                                .frame(height: 32)
-                            Spacer()
-                            Image("icons/person")
-                                .background(.gray)
-                                .frame(width: 32, height: 32)
-                                .cornerRadius(10)
+                            Text("Select guests, date and time") // should be localized
+                                .foregroundColor(.white)
+                                .font(.system(size: 44)) // Should be custom font
                         }
+                        VStack(spacing: 0) {
+                            DateSelectionView(selectedDate: $viewModel.checkInDateViewModel.date,
+                                              startDate: .constant(Date()),
+                                              viewModel: viewModel.checkInDateViewModel)
+                            Divider()
+                            DateSelectionView(selectedDate: $viewModel.checkOutDateViewModel.date,
+                                              startDate: $viewModel.checkInDateViewModel.date,
+                                              viewModel: viewModel.checkOutDateViewModel)
+                            Divider()
+                            NumberSelectionView(selectedNumber: $viewModel.adultsCountViewModel.number,
+                                                viewModel: viewModel.adultsCountViewModel)
+                            Divider()
+                            NumberSelectionView(selectedNumber: $viewModel.childrenCountViewModel.number,
+                                                viewModel: viewModel.childrenCountViewModel)
+                        }
+                        .background(.white)
+                        .cornerRadius(8)
 
-                        Text("Select guests, date and time") // should be localized
-                            .foregroundColor(.white)
-                            .font(.system(size: 44)) // Should be custom font
-                    }
-                    VStack(spacing: 0) {
-                        DateSelectionView(selectedDate: $checkInDate,
-                                      startDate: .constant(Date()),
-                                      viewModel: viewModel.checkInDateViewModel)
-                        Divider()
-                        DateSelectionView(selectedDate: $checkOutDate,
-                                      startDate: $checkInDate,
-                                      viewModel: viewModel.checkOutDateViewModel)
-                    }
-                    .background(
-                        RoundedRectangle(cornerRadius: 8,
-                                         style: .continuous)
-                        .foregroundColor(.white)
-                    )
+                        recentSearchesView
 
-                    Spacer()
+                        Spacer()
 
-                    NavigationLink(destination: HotelListView().navigationBarHidden(true)) {
-                        Text("Send")
-                            .foregroundColor(.white)
+
+                        NavigationLink(destination: HotelListView(viewModel: viewModel.hotelListViewModel).navigationBarHidden(true)) {
+                            Text("Search")
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity, minHeight: 60)
+                                .background(Color(red: 44/255,
+                                                  green: 171/255,
+                                                  blue: 177/255))
+                                .cornerRadius(20)
+                        }
+                        Spacer()
                     }
-                    Spacer()
+                    .padding(.top, UIApplication.shared.safeAreaTop + 16)
+                    .padding(.horizontal, 16)
                 }
-                .padding(.top, UIApplication.shared.safeAreaTop + 16)
-                .padding(.horizontal, 16)
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
             }
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
+        }
+    }
+
+    var recentSearchesView: some View {
+        VStack(alignment: .leading) {
+            Text("Recent searches")
+                .foregroundColor(.white)
+
+            HStack {
+                Image("icons/manage_history")
+                    .renderingMode(.original)
+                Divider()
+                    .frame(maxHeight: .infinity)
+                Text("03  07 / 2024 - 08 / 07 / 2024")
+                    .foregroundColor(Color(red: 109/255,
+                                           green: 109/255,
+                                           blue: 109/255))
+                Text("1 adult, 0 children")
+                    .foregroundColor(Color(red: 109/255,
+                                           green: 109/255,
+                                           blue: 109/255))
+            }
+            .font(.system(size: 12))
+            .padding()
+            .frame(height: 48)
+            .background(.white)
+            .cornerRadius(8)
         }
     }
 }
@@ -76,61 +109,5 @@ struct HotelSearchView: View {
 struct HotelSearchView_Previews: PreviewProvider {
     static var previews: some View {
         HotelSearchView()
-    }
-}
-class DateSelectionViewModel: ObservableObject {
-    var icon: String
-    var title: String
-    @Published var dateString: String = "DD / MM / YYYY"
-
-    init(icon: String,
-         title: String) {
-        self.icon = icon
-        self.title = title
-    }
-
-    func updateDate(_ date: Date) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/YYYY"
-        dateString = dateFormatter.string(from: date)
-    }
-}
-struct DateSelectionView: View {
-
-    @Binding var selectedDate: Date
-    @Binding var startDate: Date
-
-    @StateObject var viewModel: DateSelectionViewModel
-
-    var body: some View {
-        HStack {
-            HStack(spacing: 8) {
-                Image(viewModel.icon)
-                Text(viewModel.title)
-                    .foregroundColor(.black)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-
-            Divider()
-                .frame(maxHeight: .infinity)
-
-            Text(viewModel.dateString)
-                .foregroundColor(.black)
-                .padding(.leading)
-                .overlay {
-                    DatePicker(viewModel.title,
-                               selection: $selectedDate,
-                               in: startDate...,
-                               displayedComponents: [.date])
-                    .blendMode(.destinationOver)
-                    .foregroundColor(.black)
-                    .onChange(of: selectedDate) { newValue in
-                        viewModel.updateDate(newValue)
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .padding(.horizontal)
-        .frame(height: 50, alignment: .leading)
     }
 }

@@ -126,3 +126,17 @@ struct Reviews: Codable {
         case score, total
     }
 }
+
+extension Property {
+   static var mock: Property {
+       let file = Bundle.main.path(forResource: "Property.json", ofType: nil) ?? ""
+       let url = URL(fileURLWithPath: file)
+
+       guard let data = try? Data(contentsOf: url) else {
+           fatalError("Invalid file")
+       }
+
+
+       return try! JSONDecoder().decode(Property.self, from: data)
+    }
+}

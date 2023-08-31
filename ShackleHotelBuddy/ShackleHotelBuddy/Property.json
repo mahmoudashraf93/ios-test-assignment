@@ -1,0 +1,181 @@
+
+{
+    "__typename": "Property",
+    "id": "9492953",
+    "featuredMessages": [],
+    "name": "Muong Thanh Luxury Nha Trang Hotel",
+    "availability": {
+        "__typename": "PropertyAvailability",
+        "available": true,
+        "minRoomsLeft": 4
+    },
+    "propertyImage": {
+        "__typename": "PropertyImage",
+        "alt": "",
+        "fallbackImage": null,
+        "image": {
+            "__typename": "Image",
+            "description": "Front of property",
+            "url": "https://images.trvl-media.com/lodging/10000000/9500000/9493000/9492953/6765e39b.jpg?impolicy=resizecrop&rw=455&ra=fit"
+        },
+        "subjectId": 91001
+    },
+    "destinationInfo": {
+        "__typename": "PropertyDestinationInfo",
+        "distanceFromDestination": {
+            "__typename": "Distance",
+            "unit": "MILE",
+            "value": 0.99
+        },
+        "distanceFromMessaging": null,
+        "regionId": "553248635950844810"
+    },
+    "legalDisclaimer": null,
+    "listingFooter": null,
+    "mapMarker": {
+        "__typename": "MapMarker",
+        "label": "$107",
+        "latLong": {
+            "__typename": "Coordinates",
+            "latitude": 12.236393,
+            "longitude": 109.196497
+        }
+    },
+    "neighborhood": {
+        "__typename": "Region",
+        "name": "Tran Phu Beach"
+    },
+    "offerBadge": {
+        "__typename": "OfferBadge",
+        "primary": {
+            "__typename": "Badge",
+            "text": "Great for families",
+            "theme_temp": "FAMILY_FRIENDLY",
+            "icon_temp": {
+                "__typename": "Icon",
+                "id": "family_friendly",
+                "description": "family_friendly"
+            },
+            "mark": null
+        },
+        "secondary": null
+    },
+    "offerSummary": {
+        "__typename": "OfferSummary",
+        "messages": [],
+        "attributes": []
+    },
+    "pinnedDetails": null,
+    "price": {
+        "__typename": "PropertyPrice",
+        "options": [
+            {
+                "__typename": "PropertyPriceOption",
+                "strikeOut": null,
+                "disclaimer": null,
+                "formattedDisplayPrice": "$107"
+            }
+        ],
+        "priceMessaging": null,
+        "lead": {
+            "__typename": "Money",
+            "amount": 106.99,
+            "currencyInfo": {
+                "__typename": "Currency",
+                "code": "USD",
+                "symbol": "$"
+            },
+            "formatted": "$107"
+        },
+        "strikeOut": null,
+        "displayMessages": [
+            {
+                "__typename": "PriceDisplayMessage",
+                "lineItems": [
+                    {
+                        "__typename": "DisplayPrice",
+                        "disclaimer": null,
+                        "price": {
+                            "__typename": "FormattedMoney",
+                            "formatted": "$107",
+                            "accessibilityLabel": "The price is $107"
+                        },
+                        "role": "LEAD"
+                    }
+                ]
+            },
+            {
+                "__typename": "PriceDisplayMessage",
+                "lineItems": [
+                    {
+                        "__typename": "LodgingEnrichedMessage",
+                        "accessibilityLabel": null,
+                        "mark": null,
+                        "state": null,
+                        "value": "$588 total",
+                        "badge": null
+                    }
+                ]
+            },
+            {
+                "__typename": "PriceDisplayMessage",
+                "lineItems": [
+                    {
+                        "__typename": "LodgingEnrichedMessage",
+                        "accessibilityLabel": null,
+                        "mark": null,
+                        "state": null,
+                        "value": "includes taxes & fees",
+                        "badge": null
+                    }
+                ]
+            }
+        ],
+        "strikeOutType": "STANDALONE",
+        "priceMessages": [
+            {
+                "__typename": "LodgingPlainMessage",
+                "value": "per night"
+            }
+        ]
+    },
+    "priceAfterLoyaltyPointsApplied": {
+        "__typename": "PropertyPrice",
+        "options": [
+            {
+                "__typename": "PropertyPriceOption",
+                "strikeOut": null,
+                "disclaimer": null,
+                "formattedDisplayPrice": "$107"
+            }
+        ],
+        "lead": {
+            "__typename": "Money",
+            "amount": 106.99,
+            "currencyInfo": {
+                "__typename": "Currency",
+                "code": "USD",
+                "symbol": "$"
+            },
+            "formatted": "$107"
+        }
+    },
+    "propertyFees": [],
+    "reviews": {
+        "__typename": "PropertyReviewsSummary",
+        "score": 8.4,
+        "total": 90
+    },
+    "sponsoredListing": null,
+    "star": null,
+    "supportingMessages": null,
+    "regionId": "553248635950844810",
+    "priceMetadata": {
+        "__typename": "PropertyPriceMetadata",
+        "discountType": null,
+        "rateDiscount": null,
+        "totalDiscountPercentage": null
+    },
+    "saveTripItem": null
+}
+
