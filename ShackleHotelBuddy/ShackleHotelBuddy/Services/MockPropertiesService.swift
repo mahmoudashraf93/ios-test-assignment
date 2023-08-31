@@ -8,9 +8,9 @@
 import Foundation
 
 struct MockPropertiesService: PropertiesServiceProtocol {
-    let expectedError: Error?
-    let propertyDetailResponse: Property?
-    let propertiesResponse: PropertiesResponse?
+    var expectedError: Error?
+    var propertyDetailResponse: Property?
+    var propertiesResponse: PropertiesResponse?
 
     func fetchProperties(with parameters: ListParameters) async throws -> PropertiesResponse {
         if let propertiesResponse {

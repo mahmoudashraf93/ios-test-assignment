@@ -112,6 +112,7 @@ final class NetworkClientTests: XCTestCase {
             httpVersion: "HTTP/1.1",
             headerFields: nil)!
 
+        // Should move this to a class JSONFIleLoader or something 
         let file = Bundle(for: type(of: self)).path(forResource: "Response_Valid.json", ofType: nil) ?? ""
         let url = URL(fileURLWithPath: file)
 
