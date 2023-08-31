@@ -16,7 +16,7 @@ struct NumberSelectionView: View {
             HStack(spacing: 8) {
                 Image(viewModel.icon)
                 Text(viewModel.title)
-                    .foregroundColor(.black)
+                    .foregroundColor(.greyTextColor)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -25,12 +25,13 @@ struct NumberSelectionView: View {
             Picker(selection: $viewModel.number) {
                 ForEach(0...10, id: \.self) { number in
                     Text("\(number)")
+                        .foregroundColor(.greyTextColor)
                 }
             } label: {
                 Text("\(viewModel.number)")
             }
             .pickerStyle(.automatic)
-            .tint(.black)
+            .tint(.greyTextColor)
             .frame(maxWidth: .infinity, alignment: .leading)
 
         }

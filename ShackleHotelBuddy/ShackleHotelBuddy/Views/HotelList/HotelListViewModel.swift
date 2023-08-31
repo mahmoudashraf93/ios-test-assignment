@@ -25,7 +25,7 @@ class HotelListViewModel: ObservableObject {
     @MainActor
     func fetchHotels() async {
 //        var params = listParameters
-//        params.priceRange = filter.priceRange
+//        params.priceRange = filter.priceRange // This is crappy need to fix but for the sake of the THA lets keep it like this as it works
 //        hotels.removeAll()
 //        do {
 //            let response = try await service.fetchProperties(with: params)

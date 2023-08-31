@@ -19,7 +19,7 @@ struct DateSelectionView: View {
             HStack(spacing: 8) {
                 Image(viewModel.icon)
                 Text(viewModel.title)
-                    .foregroundColor(.black)
+                    .foregroundColor(.greyTextColor)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -27,7 +27,7 @@ struct DateSelectionView: View {
                 .frame(maxHeight: .infinity)
 
             Text(viewModel.dateString)
-                .foregroundColor(.black)
+                .foregroundColor(.greyTextColor)
                 .padding(.leading)
                 .overlay {
                     DatePicker(viewModel.title,

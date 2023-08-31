@@ -86,9 +86,7 @@ struct HotelDetailsView: View {
                             VStack(alignment: .leading) {
                                 Text(viewModel.city)
                                     .font(.system(size: 14))
-                                    .foregroundColor(Color(red: 109/255,
-                                                           green: 109/255,
-                                                           blue: 109/255))
+                                    .foregroundColor(.greyTextColor)
                                 HStack(spacing: 2) {
                                     Text(viewModel.price)
                                         .fontWeight(.bold)

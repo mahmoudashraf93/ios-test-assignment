@@ -44,6 +44,8 @@ struct FilterView: View {
     }
 
     var header: some View {
+        // TIL i can use the toolbar modifier!! Instead of this wizardry :D
+        // Should move it to use the toold bar.
         ZStack(alignment: .leading) {
             Text("Filters")
                 .frame(maxWidth: .infinity)
@@ -55,9 +57,7 @@ struct FilterView: View {
             }
             .foregroundColor(.black)
             .padding(6)
-            .background(Color(red: 221/255,
-                              green: 221/255,
-                              blue: 221/255))
+            .background(Color.borderColor)
             .clipShape(Circle())
             .frame(width: 32,
                    height: 32)
@@ -90,9 +90,7 @@ struct FilterView: View {
                         .foregroundColor(.white)
                         .padding(.vertical, 16)
                         .padding(.horizontal, 26)
-                        .background(Color(red: 44/255,
-                                          green: 171/255,
-                                          blue: 177/255))
+                        .background(Color.primaryColor)
                         .cornerRadius(12)
                 }
             }
@@ -114,15 +112,11 @@ struct FilterView: View {
             HStack(spacing: 16){
                 Text("\(min)")
                     .font(.system(size: 14))
-                    .foregroundColor(Color(red: 109/255,
-                                           green: 109/255,
-                                           blue: 109/255))
+                    .foregroundColor(.borderColor)
                     .frame(width: 56, height: 40)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color(red: 221/255,
-                                          green: 221/255,
-                                          blue: 221/255),
+                            .stroke(Color.borderColor,
                                     lineWidth: 1)
                     )
 
@@ -130,15 +124,11 @@ struct FilterView: View {
                     .frame(height: 40)
                 Text("\(max)")
                     .font(.system(size: 14))
-                    .foregroundColor(Color(red: 109/255,
-                                           green: 109/255,
-                                           blue: 109/255))
+                    .foregroundColor(.borderColor)
                     .frame(width: 56, height: 40)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color(red: 221/255,
-                                          green: 221/255,
-                                          blue: 221/255),
+                            .stroke(Color.borderColor,
                                     lineWidth: 1)
                     )
             }

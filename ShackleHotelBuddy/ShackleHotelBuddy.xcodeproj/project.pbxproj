@@ -25,6 +25,7 @@
 		18877B612A9A428600BAD5FC /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18877B602A9A428600BAD5FC /* URLSessionMock.swift */; };
 		18A721252A9FBA6B0068C6FD /* MockPropertiesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A721242A9FBA6B0068C6FD /* MockPropertiesService.swift */; };
 		18A721272A9FBC690068C6FD /* Property.json in Resources */ = {isa = PBXBuildFile; fileRef = 18A721262A9FBC690068C6FD /* Property.json */; };
+		18A7212A2AA085670068C6FD /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A721292AA085670068C6FD /* Color+Extension.swift */; };
 		18C8ED712A9A498A004CEE2A /* Response_Valid.json in Resources */ = {isa = PBXBuildFile; fileRef = 18C8ED702A9A498A004CEE2A /* Response_Valid.json */; };
 		18C8ED732A9A4F3B004CEE2A /* HotelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8ED722A9A4F3B004CEE2A /* HotelRow.swift */; };
 		18C8ED752A9E331B004CEE2A /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8ED742A9E331B004CEE2A /* FilterView.swift */; };
@@ -78,6 +79,7 @@
 		18877B602A9A428600BAD5FC /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		18A721242A9FBA6B0068C6FD /* MockPropertiesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPropertiesService.swift; sourceTree = "<group>"; };
 		18A721262A9FBC690068C6FD /* Property.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Property.json; sourceTree = "<group>"; };
+		18A721292AA085670068C6FD /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		18C8ED702A9A498A004CEE2A /* Response_Valid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Response_Valid.json; sourceTree = "<group>"; };
 		18C8ED722A9A4F3B004CEE2A /* HotelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelRow.swift; sourceTree = "<group>"; };
 		18C8ED742A9E331B004CEE2A /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,15 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		18A721282AA084F10068C6FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18877B582A9A149A00BAD5FC /* UIApplication+SafeArea.swift */,
+				18A721292AA085670068C6FD /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		18C8ED762A9E3320004CEE2A /* FilterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,7 +287,7 @@
 				F9BF20DA2A6A896E006C0C49 /* ShackleHotelBuddyApp.swift */,
 				F9BF20DE2A6A8970006C0C49 /* Assets.xcassets */,
 				18877B532A99FA0D00BAD5FC /* Views */,
-				18877B582A9A149A00BAD5FC /* UIApplication+SafeArea.swift */,
+				18A721282AA084F10068C6FD /* Extensions */,
 				18A721242A9FBA6B0068C6FD /* MockPropertiesService.swift */,
 				18A721262A9FBC690068C6FD /* Property.json */,
 			);
@@ -457,6 +468,7 @@
 				18877B4D2A99F22600BAD5FC /* Constants.swift in Sources */,
 				18E23CA12A9F777400A8B0E0 /* HotelDetailsView.swift in Sources */,
 				18877B572A99FB2800BAD5FC /* HotelSearchViewModel.swift in Sources */,
+				18A7212A2AA085670068C6FD /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

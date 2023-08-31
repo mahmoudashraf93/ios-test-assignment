@@ -27,9 +27,7 @@ struct RangedSliderView: View {
         let sliderViewYCenter = sliderSize.height / 2
         ZStack {
             RoundedRectangle(cornerRadius: 2)
-                .fill(Color(red: 221/255,
-                            green: 221/255,
-                            blue: 221/255))
+                .fill(Color.borderColor)
                 .frame(height: 4)
             ZStack {
                 let sliderBoundDifference = sliderBounds.count
@@ -84,9 +82,7 @@ struct RangedSliderView: View {
         Path { path in
             path.move(to: from)
             path.addLine(to: to)
-        }.stroke(Color(red: 44/255,
-                       green: 171/255,
-                       blue: 177/255), lineWidth: 4)
+        }.stroke(Color.primaryColor, lineWidth: 4)
     }
 
     @ViewBuilder func thumbView(position: CGPoint) -> some View {
@@ -97,9 +93,7 @@ struct RangedSliderView: View {
                 .shadow(color: Color.black.opacity(0.15), radius: 3, x: 0, y: 2)
                 .contentShape(Rectangle())
             Circle()
-                .stroke(Color(red: 221/255,
-                              green: 221/255,
-                              blue: 221/255), lineWidth: 1)
+                .stroke(Color.borderColor, lineWidth: 1)
                 .frame(width: 24, height: 24)
         }
         .position(x: position.x, y: position.y)

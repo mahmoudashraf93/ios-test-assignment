@@ -53,7 +53,11 @@ struct HotelRow: View {
                         }
                     }
                 }
+                
                 Text(viewModel.city)
+                    .font(.system(size: 14))
+                    .foregroundColor(.greyTextColor)
+
                 HStack(spacing: 2) {
                     Text(viewModel.price)
                         .fontWeight(.bold)

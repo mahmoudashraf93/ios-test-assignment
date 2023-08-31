@@ -89,13 +89,9 @@ struct HotelSearchView: View {
                 Divider()
                     .frame(maxHeight: .infinity)
                 Text("03  07 / 2024 - 08 / 07 / 2024")
-                    .foregroundColor(Color(red: 109/255,
-                                           green: 109/255,
-                                           blue: 109/255))
+                    .foregroundColor(.greyTextColor)
                 Text("1 adult, 0 children")
-                    .foregroundColor(Color(red: 109/255,
-                                           green: 109/255,
-                                           blue: 109/255))
+                    .foregroundColor(.greyTextColor)
             }
             .font(.system(size: 12))
             .padding()

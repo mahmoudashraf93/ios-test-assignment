@@ -51,9 +51,7 @@ struct HotelListView: View {
             }
             .foregroundColor(.black)
             .padding(6)
-            .background(Color(red: 221/255,
-                              green: 221/255,
-                              blue: 221/255))
+            .background(Color.borderColor)
             .clipShape(Circle())
             .frame(width: 32,
                    height: 32)
@@ -66,9 +64,7 @@ struct HotelListView: View {
                 Image("icons/discover_tune")
                     .foregroundColor(.black)
                     .padding(6)
-                    .background(Color(red: 221/255,
-                                      green: 221/255,
-                                      blue: 221/255))
+                    .background(Color.borderColor)
                     .clipShape(Circle())
                     .frame(width: 32,
                            height: 32)
