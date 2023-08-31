@@ -25,7 +25,7 @@ struct HotelSearchView: View {
                                 Image("images/logo")
                                     .frame(height: 32)
                                 Spacer()
-                                Image("icons/person")
+                                Image("images/profile")
                                     .background(.gray)
                                     .frame(width: 32, height: 32)
                                     .cornerRadius(10)
