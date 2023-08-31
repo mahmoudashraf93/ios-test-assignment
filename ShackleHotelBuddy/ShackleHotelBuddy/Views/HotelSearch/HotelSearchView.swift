@@ -77,6 +77,14 @@ struct HotelSearchView: View {
     }
 
     var recentSearchesView: some View {
+        // The values are hardcoded for the sake of the THA
+        // But what I would do is the following
+        // In case there isn't a way to fetch the recent search from the server
+        // and we are willing to lose multi device support for
+        // I would store the ListParameters in a UserDefaults key
+        // and show this view only if that key's value is available
+        //
+        // and when tapped I would go fetch the list with that stored ListParameters object
         VStack(alignment: .leading) {
             Text("Recent searches")
                 .foregroundColor(.white)
