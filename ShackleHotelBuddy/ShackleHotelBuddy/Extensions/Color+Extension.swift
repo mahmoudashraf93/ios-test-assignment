@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension Color {
+    // If we have a design system this names should align with the design team namings
     static let greyTextColor = Color(red: 109/255,
                                      green: 109/255,
                                      blue: 109/255)

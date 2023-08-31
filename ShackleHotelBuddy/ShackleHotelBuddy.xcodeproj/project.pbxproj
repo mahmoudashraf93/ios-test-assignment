@@ -139,6 +139,8 @@
 		18877B432A99E82C00BAD5FC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				18A721262A9FBC690068C6FD /* Property.json */,
+				18A721242A9FBA6B0068C6FD /* MockPropertiesService.swift */,
 				18877B442A99E83A00BAD5FC /* PropertiesService.swift */,
 			);
 			path = Services;
@@ -288,8 +290,6 @@
 				F9BF20DE2A6A8970006C0C49 /* Assets.xcassets */,
 				18877B532A99FA0D00BAD5FC /* Views */,
 				18A721282AA084F10068C6FD /* Extensions */,
-				18A721242A9FBA6B0068C6FD /* MockPropertiesService.swift */,
-				18A721262A9FBC690068C6FD /* Property.json */,
 			);
 			path = ShackleHotelBuddy;
 			sourceTree = "<group>";
