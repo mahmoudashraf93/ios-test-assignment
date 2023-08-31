@@ -20,7 +20,6 @@ class DateSelectionViewModel: ObservableObject {
     }
 
     func updateDate(_ date: Date) {
-        self.date = date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/YYYY"
         dateString = dateFormatter.string(from: date)

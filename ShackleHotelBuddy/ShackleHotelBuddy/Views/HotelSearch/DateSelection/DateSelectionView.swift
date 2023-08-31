@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct DateSelectionView: View {
-
-    @Binding var selectedDate: Date
     @Binding var startDate: Date
 
     @StateObject var viewModel: DateSelectionViewModel
@@ -31,12 +29,12 @@ struct DateSelectionView: View {
                 .padding(.leading)
                 .overlay {
                     DatePicker(viewModel.title,
-                               selection: $selectedDate,
+                               selection: $viewModel.date,
                                in: startDate...,
                                displayedComponents: [.date])
                     .blendMode(.destinationOver)
                     .foregroundColor(.black)
-                    .onChange(of: selectedDate) { newValue in
+                    .onChange(of: viewModel.date) { newValue in
                         viewModel.updateDate(newValue)
                     }
                 }

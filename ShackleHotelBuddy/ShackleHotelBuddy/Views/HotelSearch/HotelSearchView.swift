@@ -36,12 +36,10 @@ struct HotelSearchView: View {
                                 .font(.system(size: 44)) // Should be custom font
                         }
                         VStack(spacing: 0) {
-                            DateSelectionView(selectedDate: $viewModel.checkInDateViewModel.date,
-                                              startDate: .constant(Date()),
+                            DateSelectionView(startDate: .constant(Date()),
                                               viewModel: viewModel.checkInDateViewModel)
                             Divider()
-                            DateSelectionView(selectedDate: $viewModel.checkOutDateViewModel.date,
-                                              startDate: $viewModel.checkInDateViewModel.date,
+                            DateSelectionView(startDate: $viewModel.checkInDateViewModel.date,
                                               viewModel: viewModel.checkOutDateViewModel)
                             Divider()
                             NumberSelectionView(selectedNumber: $viewModel.adultsCountViewModel.number,
