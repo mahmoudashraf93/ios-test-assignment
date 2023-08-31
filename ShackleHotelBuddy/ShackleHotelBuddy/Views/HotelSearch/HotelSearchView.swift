@@ -60,9 +60,7 @@ struct HotelSearchView: View {
                             Text("Search")
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity, minHeight: 60)
-                                .background(Color(red: 44/255,
-                                                  green: 171/255,
-                                                  blue: 177/255))
+                                .background(Color.primaryColor)
                                 .cornerRadius(20)
                         }
                         Spacer()
